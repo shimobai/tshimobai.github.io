@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>网页测试</title>
+  </head>
+  <body>
+    <input type="text" id="user_id" placeholder="请输入用户ID" />
+    <button onclick="sendMessage()">发送消息</button>
+    <script>
+      function sendMessage() {
+        let user_id = document.getElementById("user_id").value;
+        let url = `http://120.48.59.217:5700/send_private_msg?message=网页测试消息&user_id=${user_id}`;
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>
